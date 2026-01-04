@@ -1,14 +1,13 @@
 # 🚀 Google’s Gemini Bot — Multi-Modal AI Assistant ✅
 
-> ✅ A powerful AI assistant built using **Google’s Gemini models**, featuring a  
-> **Django REST backend** and an **interactive Streamlit frontend**.
+> ✅ A powerful AI assistant built using Google’s Gemini models, featuring a Django REST backend and an interactive Streamlit frontend.
 
 Gemini Bot enables:
 ✅ Natural conversations  
 ✅ Image understanding  
-✅ PDF-based question answering using **RAG (Retrieval-Augmented Generation)**  
+✅ PDF-based question answering using RAG (Retrieval-Augmented Generation)
 
----
+--------------------------------------------------
 
 ## ✨ Key Highlights ✅
 
@@ -18,162 +17,159 @@ Gemini Bot enables:
 ✅ Real-world AI deployment example  
 ✅ Scalable and extensible design  
 
----
+--------------------------------------------------
 
 ## 🧠 Features Overview ✅
 
-### 🤖 Conversational Chatbot
+🤖 Conversational Chatbot  
 ✅ Chat naturally with Gemini  
 ✅ Custom system prompts to define behavior  
 ✅ Suitable for assistants, tutors, and domain bots  
 
----
-
-### 🖼️ Image Analysis Bot
+🖼️ Image Analysis Bot  
 ✅ Upload images (JPG, PNG, WEBP)  
 ✅ Ask questions about image content  
-✅ Uses `gemini-2.5-flash` vision model  
+✅ Uses gemini-2.5-flash vision model  
 
----
-
-### 📄 Chat with PDF (RAG)
+📄 Chat with PDF (RAG)  
 ✅ Upload PDF documents  
 ✅ Automatic text extraction  
-✅ Embeddings via `text-embedding-004`  
-✅ Semantic search using **FAISS**  
+✅ Embeddings via text-embedding-004  
+✅ Semantic search using FAISS  
 ✅ Accurate, context-aware answers  
 
----
+--------------------------------------------------
 
 ## 🏗️ Project Architecture ✅
 
-```text
 Gemini-Bot/
 │
-├── Gemini-Bot-backend/     # Django REST API
+├── Gemini-Bot-backend/     (Django REST API)
 │   ├── Text Chat APIs
 │   ├── Image Analysis APIs
 │   ├── PDF RAG Pipeline
 │
-├── Gemini-Bot-main/        # Streamlit Frontend
+├── Gemini-Bot-main/        (Streamlit Frontend)
 │   ├── Chat Interface
 │   ├── Image Upload UI
 │   ├── PDF Chat Interface
-⚙️ Setup Instructions ✅
-🔹 Prerequisites
 
-✅ Python 3.10+ (Tested with Python 3.13)
-✅ Google Gemini API Key
-👉 https://aistudio.google.com/
-🔧 Backend Setup ✅
+--------------------------------------------------
+
+## ⚙️ Setup Instructions ✅
+
+🔹 Prerequisites  
+✅ Python 3.10+ (Tested with Python 3.13)  
+✅ Google Gemini API Key  
+➡ https://aistudio.google.com/
+
+--------------------------------------------------
+
+## 🔧 Backend Setup ✅
+
+Step 1: Navigate to backend
 cd Gemini-Bot-backend
 
-1️⃣ Create & Activate Virtual Environment
-python3 -m venv .venv
-source .venv/bin/activate
-# Windows: .venv\Scripts\activate
+Step 2: Create & activate virtual environment
+python3 -m venv .venv  
+source .venv/bin/activate  
+(Windows: .venv\Scripts\activate)
 
-2️⃣ Install Dependencies
+Step 3: Install dependencies
 pip install -r requirements.txt
 
-3️⃣ Configure Environment Variables
+Step 4: Create .env file
+GEMINI_API_KEY=your_actual_api_key_here  
+GEMINI_TEXT_MODEL=models/gemini-2.5-flash  
+GEMINI_VISION_MODEL=models/gemini-2.5-flash  
 
-Create a .env file in backend directory:
+Step 5: Run backend server
+python manage.py migrate  
+python manage.py runserver 8001  
 
-GEMINI_API_KEY=your_actual_api_key_here
-
-
-(Optional – defaults already set)
-
-GEMINI_TEXT_MODEL=models/gemini-2.5-flash
-GEMINI_VISION_MODEL=models/gemini-2.5-flash
-
-4️⃣ Run Backend Server
-python manage.py migrate
-python manage.py runserver 8001
-
-
-✅ Backend runs at:
+Backend URL:
 http://localhost:8001
 
-🎨 Frontend Setup ✅
+--------------------------------------------------
+
+## 🎨 Frontend Setup ✅
+
+Step 1: Navigate to frontend
 cd Gemini-Bot-main
 
-1️⃣ Create & Activate Virtual Environment
-python3 -m venv .venv
-source .venv/bin/activate
-# Windows: .venv\Scripts\activate
+Step 2: Create & activate virtual environment
+python3 -m venv .venv  
+source .venv/bin/activate  
+(Windows: .venv\Scripts\activate)
 
-2️⃣ Install Dependencies
+Step 3: Install dependencies
 pip install -r requirements.txt
 
-3️⃣ Run Streamlit App
+Step 4: Run Streamlit app
 streamlit run app.py
 
-
-✅ Frontend runs at:
+Frontend URL:
 http://localhost:8501
 
-🧪 How to Use the App ✅
+--------------------------------------------------
 
-✅ Chatbot Mode
+## 🧪 How to Use ✅
 
-Start general conversation
+✅ Chatbot Mode  
+- Start general conversation  
+- Set system prompt (example: You are a coding mentor)
 
-Set system prompt (e.g., You are a coding mentor)
+✅ Image Bot  
+- Upload an image  
+- Ask questions about objects or text  
 
-✅ Image Bot
+✅ Chat with PDF  
+- Upload PDF  
+- Ask document-specific questions  
 
-Upload an image
+--------------------------------------------------
 
-Ask questions about objects or text
+## 🛠️ Troubleshooting ✅
 
-✅ Chat with PDF
+❗ Quota / Rate limit exceeded  
+- Happens mainly during PDF embeddings  
+- Wait briefly and retry  
 
-Upload PDF
+❗ Model not found error  
+- Ensure these models are enabled:
+  - gemini-2.5-flash
+  - text-embedding-004
 
-Ask document-specific questions
+--------------------------------------------------
 
-🛠️ Troubleshooting ✅
+## 🧰 Tech Stack ✅
 
-❗ Quota / Rate Limit Exceeded
+✅ Python  
+✅ Django & Django REST Framework  
+✅ Streamlit  
+✅ Google Gemini API  
+✅ LangChain  
+✅ FAISS (Vector Store)  
+✅ PDFPlumber  
 
-Happens mainly during PDF embeddings
+--------------------------------------------------
 
-Wait a short time and retry
+## 🌟 Future Enhancements ✅
 
-❗ Model Not Found Error
-
-Ensure these models are enabled:
-
-gemini-2.5-flash
-
-text-embedding-004
-
-🧰 Tech Stack ✅
-
-✅ Python
-✅ Django & Django REST Framework
-✅ Streamlit
-✅ Google Gemini API
-✅ LangChain
-✅ FAISS (Vector Store)
-✅ PDFPlumber
-
-🌟 Future Enhancements ✅
-
-☑️ Authentication & user history
-☑️ Multi-PDF chat support
-☑️ Streaming responses
-☑️ UI enhancements
+☑️ Authentication & chat history  
+☑️ Multi-PDF support  
+☑️ Streaming responses  
+☑️ UI enhancements  
 ☑️ Cloud deployment (AWS / GCP)
 
-🙌 Final Note ✅
+--------------------------------------------------
 
-This project demonstrates production-ready AI engineering by combining:
-✅ Large Language Models
-✅ RAG pipelines
-✅ REST APIs
-✅ Modern UI frameworks
+## 🙌 Final Note ✅
 
-Perfect for learning, interview showcases, and real-world AI applications 🚀
+This project demonstrates production-ready AI engineering using:
+✅ Large Language Models  
+✅ RAG pipelines  
+✅ REST APIs  
+✅ Modern UI frameworks  
+
+Perfect for learning, interviews, and real-world AI applications 🚀
