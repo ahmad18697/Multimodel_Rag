@@ -40,19 +40,29 @@ Gemini Bot enables:
 
 --------------------------------------------------
 
-## 🏗️ Project Architecture ✅
+## 🏗️ Project Architecture (Short) ✅
 
-Gemini-Bot/
-│
-├── Gemini-Bot-backend/     (Django REST API)
-│   ├── Text Chat APIs
-│   ├── Image Analysis APIs
-│   ├── PDF RAG Pipeline
-│
-├── Gemini-Bot-main/        (Streamlit Frontend)
-│   ├── Chat Interface
-│   ├── Image Upload UI
-│   ├── PDF Chat Interface
+Gemini Bot follows a **client–server architecture** with clear separation between UI and AI logic.
+
+User  
+→ Streamlit Frontend (UI)  
+→ Django REST Backend (Business Logic)  
+→ Google Gemini Models & RAG Pipeline  
+→ Response back to User  
+
+### Components
+- **Frontend (Streamlit)**  
+  Handles user interaction, file uploads, and API calls.
+
+- **Backend (Django + DRF)**  
+  Manages text chat, image analysis, and PDF-based RAG logic.
+
+- **AI Layer**  
+  - Gemini `gemini-2.5-flash` for text & image understanding  
+  - `text-embedding-004` + FAISS for PDF semantic search
+
+This architecture is **modular, scalable, and production-ready** 🚀
+
 
 --------------------------------------------------
 
